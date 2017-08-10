@@ -27,8 +27,8 @@ group: stable
 
 script: 
 - uname -r
-- cat /lib/modules/`uname -r`/build/include/generated/uapi/linux/version.h
-- cat /lib/modules/`uname -r`/build/include/generated/utsrelease.h
+- cat /lib/modules/$(uname -r)/build/include/generated/uapi/linux/version.h
+- cat /lib/modules/$(uname -r)/build/include/generated/utsrelease.h
 - cat /proc/version_signature
 
 
