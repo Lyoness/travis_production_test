@@ -19,7 +19,7 @@ script:
   google/cadvisor:latest
 
 
- matrix:
+matrix:
    include:
      - sudo: false
        dist: trusty
