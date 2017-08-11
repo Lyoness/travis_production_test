@@ -2,7 +2,10 @@
 
 dist: trusty
 
-sudo: false
+sudo: required
+
+services:
+  - docker
 
 install: true
 
@@ -21,20 +24,24 @@ script:
 
 matrix:
    include:
-     - sudo: false
+     - sudo: required
        dist: trusty
        language: __connie__
-       env: docker dist=Trusty connie
-     - sudo: false
+       env: GCE dist=Trusty connie
+     - sudo: required
        dist: trusty
        language: __garnet__
-       env: docker dist=Trusty garnet
-     - sudo: false
+       env: GCE dist=Trusty garnet
+     - sudo: required
        dist: trusty  
        language: __amethyst__
-       env: docker dist=Trusty amethyst
-     - sudo: false
+       env: GCE dist=Trusty amethyst
+     - sudo: required
+       dist: trusty 
+       language: __sugilite__
+       env: GCE dist=Trusty sugilite
+     - sudo: required
        dist: precise
        language: ruby
-       env: docker precise default
+       env: GCE precise ruby
 
