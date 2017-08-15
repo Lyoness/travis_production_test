@@ -1,7 +1,7 @@
 language: __garnet__
 sudo: required
 dist: trusty
-group: edge 
+group: dev 
 
 services:
     - mysql
