@@ -14,6 +14,10 @@ matrix:
       dist: trusty
       language: __connie__
       group: dev
+    - sudo: required
+      dist: trusty
+      language: __connie__
+      group: stable
       env:  connie dev image GCE
     - sudo: false
       dist: trusty
