@@ -6,7 +6,7 @@ script:
   - which hg
   - pip freeze
   - pip freeze | grep -i mercurial
-  - dpkg -L | grep -i mercurial 
+  - dpkg -L mercurial 
 
 matrix:
   include:
