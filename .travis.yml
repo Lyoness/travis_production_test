@@ -1,7 +1,6 @@
 
-sudo: required
+sudo: false
 dist: trusty
-group: dev 
 
 matrix:
     include:
@@ -9,8 +8,6 @@ matrix:
           language: __garnet__
         - env: image=amethyst
           language: __amethyst__
-        - env: image=sugilite
-          language: __sugilite__
 
 services:
     - mysql
