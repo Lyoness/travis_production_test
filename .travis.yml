@@ -5,28 +5,20 @@ install: skip
 script:
   - which hg
   - pip freeze
-  - pip freeze | grep -i mercu
+  - pip freeze | grep -i mercurial
+  - dpkg -L | grep -i mercurial 
 
 matrix:
   include:
     - sudo: required
-      dist: precise
-      env: DIST=precise STACK=GCE
+      dist: trusty
+      language: __connie__
+      group: dev
+      env:  connie dev image GCE
     - sudo: false
       dist: trusty
-      env: DIST=trusty STACK=EC2
-    - sudo: required
-      dist: trusty
-      env: DIST=trusty STACK=GCE
-    - sudo: false
-      dist: trusty
-      group: edge
-      env: DIST=trusty STACK=EC2 GROUP=edge
-    - sudo: required
-      dist: trusty
-      group: edge
-      env: DIST=trusty STACK=GCE GROUP=edge
-#     - os: osx
+      language: __connie__
+      env: connie stable image EC2
 
 notifications:
   email: false
