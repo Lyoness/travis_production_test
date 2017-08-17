@@ -2,7 +2,7 @@ language: __steveonnie__
 
 sudo: required
 
-script: uname -r
+script: uname -a
 
 notifications:
   email: false
