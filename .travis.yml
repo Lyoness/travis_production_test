@@ -5,8 +5,8 @@ install: skip
 script:
   - which hg
   - pip freeze
-  - pip freeze | grep -i mercurial
-  - dpkg -L mercurial 
+  - dpkg -L | grep -i mercurial 
+  - dpkg -L mercurial | grep hg$
 
 matrix:
   include:
@@ -14,15 +14,16 @@ matrix:
       dist: trusty
       language: __connie__
       group: dev
+      env: connie dev GCE
     - sudo: required
       dist: trusty
       language: __connie__
       group: stable
-      env:  connie dev image GCE
+      env:  connie stable GCE
     - sudo: false
       dist: trusty
-      language: __connie__
-      env: connie stable image EC2
+      language: python
+      env: garnet prod image EC2
 
 notifications:
   email: false
