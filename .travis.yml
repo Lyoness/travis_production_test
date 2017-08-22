@@ -1,10 +1,12 @@
 
 sudo: required
 dist: trusty
-group: dev 
+group: stable
 
 matrix:
     include:
+        - env: image=connie
+          language: __connie__
         - env: image=garnet
           language: __garnet__
         - env: image=amethyst
@@ -12,9 +14,9 @@ matrix:
         - env: image=sugilite
           language: __sugilite__
 
-services:
-    - mysql
-install: true
+install: skip
 script:
-    - mysql -e 'SELECT * from mysql.user\G;'
-    - mysql -e 'DESC mysql.user\G;'
+    - ls -l /etc/init.d/
+    - dpkg -l | grep x11
+    - which Xvfb
+    - xdpyinfo -display :0 >/dev/null 2>&1 && echo "In use" || echo "Free" 
