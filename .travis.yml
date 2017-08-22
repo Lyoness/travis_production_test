@@ -1,50 +1,29 @@
-language: python
+language: node_js
 
 install: skip
 
 script:
-  - which hg
-  - hg --version
-  - pip freeze | grep -i mercurial
-  - dpkg -l | grep -i mercurial
+  - yarn version
+
 
 matrix:
   include:
-    - sudo: required
-      dist: trusty
-      language: __connie__
-      group: dev
-      env: GCE GROUP=DEV CONNIE
-    - sudo: required
-      dist: trusty
-      language: __connie__
-      group: stable
-      env:  GCE GROUP=STABLE CONNIE
-    - sudo: required
-      dist: trusty
-      language: __amethyst__
-      group: dev
-      env: GCE GROUP=DEV AMETHYST
-    - sudo: required
-      dist: trusty
-      language: __amethyst__
-      group: stable
-      env:  GCE GROUP=STABLE AMETHYST
+
     - sudo: required
       dist: trusty
       language: __garnet__
-      group: dev
-      env: GCE GROUP=DEV GARNET
+      group: edge
+      env: GCE GROUP=edge GARNET
     - sudo: required
       dist: trusty
-      language: __connie__
+      language: __garnet__
       group: stable
       env:  GCE GROUP=STABLE GARNET
     - sudo: required
       dist: trusty
       language: __sugilite__
-      group: dev
-      env: GCE GROUP=DEV SUGILITE
+      group: edge
+      env: GCE GROUP=edge SUGILITE
     - sudo: required
       dist: trusty
       language: __sugilite__
@@ -52,14 +31,16 @@ matrix:
       env:  GCE GROUP=STABLE SUGILITE
     - sudo: false
       dist: trusty
-      language: python
+      language: node_js
       env: DIST=trusty STACK=EC2
     - sudo: false
       dist: precise
       env: DIST=precise STACK=EC2
+      language: node_js
     - sudo: required
       dist: precise
       env: DIST=precise STACK=GCE
+      language: node_js
 
 notifications:
   email: false
