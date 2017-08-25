@@ -1,9 +1,5 @@
 dist: trusty
 
-script:
-  - php --version
-
-
 matrix:
   include:
 
@@ -15,7 +11,7 @@ matrix:
       language: __amethyst__
       group: stable
       env: GCE GROUP=stable AMETHYST
-  - sudo: required
+    - sudo: required
       language: __connie__
       group: dev
       env: GCE GROUP=dev CONNIE
@@ -41,6 +37,10 @@ matrix:
       env:  GCE GROUP=STABLE SUGILITE
     - sudo: false
       language: php
+      
+ 
+ script:
+  - php --version
       
    
 notifications:
