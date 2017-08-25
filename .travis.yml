@@ -8,29 +8,39 @@ matrix:
   include:
 
     - sudo: required
-      dist: trusty
-      language: __garnet__
-      group: edge
-      env: GCE GROUP=edge GARNET
+      language: __amethyst__
+      group: dev
+      env: GCE GROUP=dev AMETHYST
     - sudo: required
-      dist: trusty
+      language: __amethyst__
+      group: stable
+      env: GCE GROUP=stable AMETHYST
+    - sudo: required
+      language: __connie__
+      group: dev
+      env: GCE GROUP=dev CONNIE
+    - sudo: required
+      language: __connie__
+      group: stable
+      env: GCE GROUP=stable CONNIE
+    - sudo: required
+      language: __garnet__
+      group: dev
+      env: GCE GROUP=dev GARNET
+    - sudo: required
       language: __garnet__
       group: stable
       env:  GCE GROUP=STABLE GARNET
     - sudo: required
-      dist: trusty
       language: __sugilite__
-      group: edge
-      env: GCE GROUP=edge SUGILITE
+      group: dev
+      env: GCE GROUP=dev SUGILITE
     - sudo: required
-      dist: trusty
       language: __sugilite__
       group: stable
       env:  GCE GROUP=STABLE SUGILITE
     - sudo: false
-      dist: trusty
       language: php
-      env: DIST=trusty STACK=EC2
 
 
 notifications:
