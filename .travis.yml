@@ -1,5 +1,8 @@
 dist: trusty
 
+ script:
+  - php --version
+
 matrix:
   include:
 
@@ -38,9 +41,6 @@ matrix:
     - sudo: false
       language: php
       
- 
- script:
-  - php --version
       
    
 notifications:
