@@ -6,6 +6,7 @@ script:
   - python --version
   - pypy --version
   - node --version
+  - node -p process.versions.v8
   - firefox -version
   
 
