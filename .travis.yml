@@ -2,7 +2,12 @@
 
 script:
   - php --version
-
+  - pyenv --version
+  - python --version
+  - pypy --version
+  - node --version
+  - firefox -version
+  
 
 matrix:
   include:
