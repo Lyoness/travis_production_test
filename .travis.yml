@@ -3,7 +3,7 @@
 script:
   - locate bin/php
   - pyenv --version
-  - python -v
+  - python --version
   - pypy --version
   - node --version
   - node --v8-options
