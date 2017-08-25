@@ -1,11 +1,12 @@
 
 
 script:
-  - php --version
+  - locate bin/php
   - pyenv --version
-  - python --version
+  - sudo find / -type f -executable -iname 'python*' -exec file -i '{}' \; | awk -F: '/x-executable; charset=binary/ {print $1}' | xargs readlink -f | sort -u | xargs -I % sh -c 'echo -n "%: "; % -V'
   - pypy --version
   - node --version
+  - node --v8-options
   - node -p process.versions.v8
   - firefox -version
   
