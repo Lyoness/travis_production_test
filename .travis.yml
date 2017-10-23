@@ -10,26 +10,21 @@ matrix:
     - sudo: required
       dist: trusty
       language: __connie__
-    - dist: precise
-      language: ruby
     - sudo: required
-      dist: precise
-      language: generic
+      dist: trusty
+      language: __garnet__
     - sudo: false
       dist: trusty
       language: __garnet__     
     - sudo: required
-      dist: trusty
-      language: __sugilite__
+      dist: xenial 
              
 group: stable
        
 
 script: 
 - uname -r
-- cat /lib/modules/$(uname -r)/build/include/generated/uapi/linux/version.h
-- cat /lib/modules/$(uname -r)/build/include/generated/utsrelease.h
-- cat /proc/version_signature
+- gcc -v
 
 
 
