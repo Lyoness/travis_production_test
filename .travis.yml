@@ -1,3 +1,4 @@
+sudo: required
 language: android
 
 android:
@@ -5,14 +6,11 @@ android:
     - tools
     - platform-tools
     - tools
-    
     - android-25
-    
-    - build-tools-25.0.2
-    - extra
+    - build-tools-26.0.2
     - extra-google-m2repository
     - extra-android-m2repository
-    - extra-android-support
+    - addon-google_apis-google-25
 
 jdk: oraclejdk8
 
@@ -20,3 +18,4 @@ install: skip
 
 script:
   - sdkmanager --list
+  - gradle --version
