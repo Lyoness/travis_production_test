@@ -6,7 +6,7 @@ script:
           - swift -version
 
 matrix:
-  include:
+   include:
 
   - os: osx
   osx_image: xcode7.3
