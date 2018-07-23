@@ -1,6 +1,6 @@
 language: objective-c
 
-osx_image: xcode9.1
+osx_image: xcode9.4
 
 script:
   - uname -a
@@ -14,4 +14,4 @@ script:
   - swift -version
   - xcrun simctl list
   - xcrun simctl list pairs
-  - echo "xcode9.1b8"
+  - echo "xcode-9.4 prod image output complete"
