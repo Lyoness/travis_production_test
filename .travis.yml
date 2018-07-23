@@ -14,4 +14,4 @@ script:
   - swift -version
   - xcrun simctl list
   - xcrun simctl list pairs
-  - echo "xcode-9.4 prod image output complete <3"
+  - echo "xcode-9.4 prod image output complete"
