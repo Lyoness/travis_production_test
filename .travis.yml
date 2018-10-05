@@ -13,18 +13,12 @@ matrix:
           addons:
               apt:
                   packages:
-                      - mysql-client
-                      - mysql-server
+                      - ghostscript
+                      - libmagic-dev
+                      - postgresql-9.5-postgis-2.3
           env: image="sudo trusty stable"
         - dist: trusty
           group: edge
-          env: image="sudo trusty edge"
-        - dist: trusty
+          env: image="sudo xenial edge"
+        - dist: xenial
           group: dev
-          env: image="sudo trusty dev"
-        - dist: precise
-          group: stable
-          env: image="sudo precise stable"
-        - dist: precise
-          group: edge
-          env: image="sudo precise edge"
